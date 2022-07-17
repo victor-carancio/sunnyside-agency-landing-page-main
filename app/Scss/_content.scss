@@ -1,0 +1,182 @@
+.content {
+  &-container {
+    @include breakpoint-up(medium) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas:
+        "card-1 egg"
+        "cup card-2"
+        "cherry oranges";
+    }
+  }
+
+  &-egg {
+    min-height: 19.375rem;
+    max-height: 37.5rem;
+    background-image: url("/images/desktop/image-transform.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include breakpoint-up(medium) {
+      height: 37.5rem;
+      grid-area: egg;
+    }
+  }
+
+  &-cup {
+    min-height: 19.375rem;
+    max-height: 37.5rem;
+    background-image: url("/images/desktop/image-stand-out.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include breakpoint-up(medium) {
+      height: 37.5rem;
+      grid-area: cup;
+    }
+  }
+
+  &-card {
+    margin: auto;
+    height: 27.1875rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      color: $very-dark-desaturated-blue;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      font-size: $font-lg;
+    }
+    p {
+      color: $dark-grayish-blue;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      width: 19.6875rem;
+      line-height: 1.5;
+      font-size: $font-med;
+      @include breakpoint-up(medium) {
+        text-align: left;
+      }
+    }
+
+    a {
+      text-align: center;
+      color: $very-dark-desaturated-blue;
+      font-family: "Fraunces", serif;
+      font-size: $font-xmed;
+    }
+
+    .link {
+      position: relative;
+      width: 8.75rem;
+      height: 1.875rem;
+
+      .underline {
+        position: absolute;
+        right: 0.9375rem;
+        bottom: 0.0625rem;
+        width: 8.4375rem;
+        height: 0.625rem;
+        border-radius: 0.3125rem;
+      }
+    }
+  }
+
+  .card1 {
+    .link {
+      .underline {
+        background: $yellow;
+        opacity: 40%;
+      }
+      &:hover {
+        .underline {
+          opacity: 100%;
+        }
+      }
+    }
+    @include breakpoint-up(medium) {
+      grid-area: card-1;
+    }
+  }
+
+  .card2 {
+    .link {
+      .underline {
+        background: $soft-red;
+        opacity: 40%;
+      }
+      &:hover {
+        .underline {
+          opacity: 100%;
+        }
+      }
+    }
+    @include breakpoint-up(medium) {
+      grid-area: card-2;
+    }
+  }
+
+  &-article {
+    height: 37.5rem;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: center;
+
+    h3 {
+      font-size: $font-lg;
+    }
+    p {
+      
+      line-height: 1.5;
+      font-size: $font-sm;
+      text-align: center;
+      margin: 0 2.8125rem;
+      margin-top: 2.8125rem;
+      margin-bottom: 3.125rem;
+    }
+  }
+
+  .cherry {
+    background-image: url("/images/desktop/image-graphic-design.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    h3 {
+      color: $dark-desaturated-cyan;
+    }
+    p {
+      color: $dark-moderate-cyan;
+    }
+
+    @include breakpoint-up(medium) {
+      grid-area: cherry;
+    }
+  }
+
+  .orange {
+    background-color: $dark-moderate-cyan;
+    background-image: url("/images/desktop/image-photography.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    h3 {
+      color: $very-dark-desaturated-blue;
+    }
+
+    p {
+      color: $dark-blue;
+    }
+    @include breakpoint-up(medium) {
+      grid-area: oranges;
+      width: 100%;
+    }
+  }
+}

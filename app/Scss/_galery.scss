@@ -1,0 +1,51 @@
+.galery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "milk oranges"
+    "cone sugarcubes";
+
+  @include breakpoint-up(medium) {
+    .image {
+      height: 21.875rem;
+    }
+  }
+  @include breakpoint-up(large) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "milk oranges cone sugarcubes";
+
+    .image {
+      height: 28.125rem;
+    }
+  }
+
+  .image {
+    min-height: 12.5rem;
+    max-height: 28.125rem;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &-milkbottles {
+    grid-area: milk;
+    background-image: url("/images/desktop/image-gallery-milkbottles.jpg");
+  }
+
+  &-oranges {
+    grid: oranges;
+    background-image: url("/images/desktop/image-gallery-orange.jpg");
+  }
+
+  &-cone {
+    grid: cone;
+    background-image: url("/images/desktop/image-gallery-cone.jpg");
+  }
+
+  &-sugarcubes {
+    grid: sugarcubes;
+    background-image: url("/images/desktop/image-gallery-sugarcubes.jpg");
+  }
+}
