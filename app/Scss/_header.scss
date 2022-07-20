@@ -1,12 +1,12 @@
 .header {
-  background-image: url("images/mobile/image-header.jpg");
+  background-image: url("../../images/mobile/image-header.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 33.75rem;
   @include breakpoint-up(medium) {
     height: 50rem;
-    background-image: url("images/desktop/image-header.jpg");
+    background-image: url("../../images/desktop/image-header.jpg");
   }
 
   &-container {
